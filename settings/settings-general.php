@@ -20,7 +20,7 @@
  * and check out the tabbed settings function on line 156.
  */
 
-add_filter( 'wpsf_register_settings_prefix_settings_general', 'wpsf_tabbed_settings' );
+add_filter( 'wpsf_register_settings_bibleup', 'wpsf_tabbed_settings' );
 
 /**
  * Tabbed example.
@@ -34,10 +34,6 @@ add_filter( 'wpsf_register_settings_prefix_settings_general', 'wpsf_tabbed_setti
 function wpsf_tabbed_settings( $wpsf_settings ) {
 	// Tabs.
 	$wpsf_settings['tabs'] = array(
-		array(
-			'id'    => 'tab_01',
-				'title' => esc_html__( 'Note', 'bibleup' ),
-		),
 		array(
 			'id'    => 'tab_1',
 			'title' => esc_html__( 'Select Options', 'bibleup' ),
@@ -56,7 +52,7 @@ function wpsf_tabbed_settings( $wpsf_settings ) {
 			'section_description' => '<b>Please read the following first before you begin to configure BibleUp</b><br>
 			There are two methods you can use to configure BibleUp - <b>select Options</b> or <b>Paste Config</b><br>
 			Use the <b>Select Options</b> forms below to set your options manually or the <b>Paste Config</b> to paste generated config options from the editor (Recommended)<br><br>
-			Set any option to <b>false</b> to get the default value<br>
+			Set any option to <b>false</b> or no to get the default value<br>
 			For full documentation of these options, check the <a href="https://bibleup.netlify.app/docs">docs</a>',
 			'section_title' => 'NOTE',
 			'section_order' => 10,
@@ -196,7 +192,7 @@ function wpsf_tabbed_settings( $wpsf_settings ) {
         array(
 			'tab_id'        => 'tab_1',
 			'section_id'    => 'additional',
-			'section_title' => 'Addition Settings',
+			'section_title' => 'Additional Settings',
 			'section_description' => 'Use these options to configure BibleUp behaviour.',
 			'section_order' => 10,
 			'fields'        => array(
@@ -222,7 +218,7 @@ function wpsf_tabbed_settings( $wpsf_settings ) {
 					Seperate these elements using a comma and put inside a square bracket.",
 					'type'    => 'text',
 					'placeholder'    => "['H1', 'H2']",
-					'default' => '',
+					'default' => 'false',
 					'link'     => array(
 						'url'      => esc_url( 'https://bibleup.netlify.app/docs/guide/options.html#bu-allow' ),
 						'type'     => 'link', // Can be 'tooltip' or 'link'. Default is 'tooltip'.
@@ -248,7 +244,7 @@ function wpsf_tabbed_settings( $wpsf_settings ) {
 					'desc'    => 'Paste the raw config options here',
 					'type'        => 'code_editor',
 					'mimetype'    => 'javascript',
-					'default' => 'false',
+					'default' => '',
 				),
 			),
 		),
