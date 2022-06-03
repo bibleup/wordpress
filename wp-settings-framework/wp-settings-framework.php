@@ -8,11 +8,11 @@
  * @license MIT
  */
 
-if ( ! class_exists( 'WordPressSettingsFramework' ) ) {
+if ( ! class_exists( 'Bibleup_WordPressSettingsFramework' ) ) {
 	/**
-	 * WordPressSettingsFramework class
+	 * Bibleup_WordPressSettingsFramework class
 	 */
-	class WordPressSettingsFramework {
+	class Bibleup_WordPressSettingsFramework {
 		/**
 		 * @access private
 		 * @var array
@@ -72,7 +72,7 @@ if ( ! class_exists( 'WordPressSettingsFramework' ) ) {
 		);
 
 		/**
-		 * WordPressSettingsFramework constructor.
+		 * Bibleup_WordPressSettingsFramework constructor.
 		 *
 		 * @param null|string $settings_file Path to a settings file, or null if you pass the option_group manually and construct your settings with a filter.
 		 * @param bool|string $option_group  Option group name, usually a short slug.
@@ -1357,7 +1357,7 @@ endwhile;
 	}
 }
 
-if ( ! function_exists( 'wpsf_get_setting' ) ) {
+if ( ! function_exists( 'wpsf_get_setting_bibleup' ) ) {
 	/**
 	 * Get a setting from an option group
 	 *
@@ -1367,7 +1367,7 @@ if ( ! function_exists( 'wpsf_get_setting' ) ) {
 	 *
 	 * @return mixed
 	 */
-	function wpsf_get_setting( $option_group, $section_id, $field_id ) {
+	function wpsf_get_setting_bibleup( $option_group, $section_id, $field_id ) {
 		$options = get_option( $option_group . '_settings' );
 		if ( isset( $options[ $section_id . '_' . $field_id ] ) ) {
 			return $options[ $section_id . '_' . $field_id ];
@@ -1377,13 +1377,13 @@ if ( ! function_exists( 'wpsf_get_setting' ) ) {
 	}
 }
 
-if ( ! function_exists( 'wpsf_delete_settings' ) ) {
+if ( ! function_exists( 'wpsf_delete_settings_bibleup' ) ) {
 	/**
 	 * Delete all the saved settings from a settings file/option group
 	 *
 	 * @param string $option_group
 	 */
-	function wpsf_delete_settings( $option_group ) {
+	function Bibleup_wpsf_delete_settings_bibleup( $option_group ) {
 		delete_option( $option_group . '_settings' );
 	}
 }
