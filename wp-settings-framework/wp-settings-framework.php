@@ -249,7 +249,6 @@ if ( ! class_exists( 'Bibleup_WordPressSettingsFramework' ) ) {
 		 */
 		public function admin_enqueue_scripts() {
 			// scripts
-			wp_register_script( 'jquery-ui-timepicker', $this->options_url . 'assets/vendor/jquery-timepicker/jquery.ui.timepicker.js', array( 'jquery', 'jquery-ui-core' ), false, true );
 			wp_register_script( 'wpsf', $this->options_url . 'assets/js/main.js', array( 'jquery' ), false, true );
 
 			wp_enqueue_script( 'jquery' );
@@ -258,7 +257,6 @@ if ( ! class_exists( 'Bibleup_WordPressSettingsFramework' ) ) {
 			wp_enqueue_script( 'thickbox' );
 			wp_enqueue_script( 'jquery-ui-core' );
 			wp_enqueue_script( 'jquery-ui-datepicker' );
-			wp_enqueue_script( 'jquery-ui-timepicker' );
 			wp_enqueue_script( 'wpsf' );
 
 			$data = array(
@@ -269,13 +267,11 @@ if ( ! class_exists( 'Bibleup_WordPressSettingsFramework' ) ) {
 			wp_localize_script( 'wpsf', 'wpsf_vars', $data );
 
 			// styles
-			wp_register_style( 'jquery-ui-timepicker', $this->options_url . 'assets/vendor/jquery-timepicker/jquery.ui.timepicker.css' );
 			wp_register_style( 'wpsf', $this->options_url . 'assets/css/main.css' );
-			wp_register_style( 'jquery-ui-css', '//ajax.googleapis.com/ajax/libs/jqueryui/1.8.21/themes/ui-darkness/jquery-ui.css' );
+			wp_register_style( 'jquery-ui-css', 'assets/css/jquery-ui-css.css' );
 
 			wp_enqueue_style( 'farbtastic' );
 			wp_enqueue_style( 'thickbox' );
-			wp_enqueue_style( 'jquery-ui-timepicker' );
 			wp_enqueue_style( 'jquery-ui-css' );
 			wp_enqueue_style( 'wpsf' );
 		}
@@ -465,21 +461,6 @@ if ( ! class_exists( 'Bibleup_WordPressSettingsFramework' ) ) {
 			$args['value'] = esc_attr( stripslashes( $args['value'] ) );
 
 			echo '<input type="number" name="' . $args['name'] . '" id="' . $args['id'] . '" value="' . $args['value'] . '" placeholder="' . $args['placeholder'] . '" class="regular-text ' . $args['class'] . '" />';
-
-			$this->generate_description( $args['desc'] );
-		}
-
-		/**
-		 * Generate: Time field
-		 *
-		 * @param array $args
-		 */
-		public function generate_time_field( $args ) {
-			$args['value'] = esc_attr( stripslashes( $args['value'] ) );
-
-			$timepicker = ( ! empty( $args['timepicker'] ) ) ? htmlentities( json_encode( $args['timepicker'] ) ) : null;
-
-			echo '<input type="text" name="' . $args['name'] . '" id="' . $args['id'] . '" value="' . $args['value'] . '" class="timepicker regular-text ' . $args['class'] . '" data-timepicker="' . $timepicker . '" />';
 
 			$this->generate_description( $args['desc'] );
 		}
