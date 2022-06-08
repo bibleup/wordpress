@@ -436,7 +436,7 @@ if ( ! class_exists( 'Bibleup_WordPressSettingsFramework' ) ) {
 		public function generate_text_field( $args ) {
 			$args['value'] = esc_attr( stripslashes( $args['value'] ) );
 
-			echo '<input type="text" name="' . $args['name'] . '" id="' . $args['id'] . '" value="' . $args['value'] . '" placeholder="' . $args['placeholder'] . '" class="regular-text ' . $args['class'] . '" />';
+			echo '<input type="text" name="' . esc_attr( $args['name'] ) . '" id="' . esc_attr( $args['id'] ) . '" value="' . $args['value'] . '" placeholder="' . esc_attr( $args['placeholder'] ) . '" class="regular-text ' . esc_attr( $args['class'] ) . '" />';
 
 			$this->generate_description( $args['desc'] );
 		}
@@ -449,7 +449,7 @@ if ( ! class_exists( 'Bibleup_WordPressSettingsFramework' ) ) {
 		public function generate_hidden_field( $args ) {
 			$args['value'] = esc_attr( stripslashes( $args['value'] ) );
 
-			echo '<input type="hidden" name="' . $args['name'] . '" id="' . $args['id'] . '" value="' . $args['value'] . '"  class="hidden-field ' . $args['class'] . '" />';
+			echo '<input type="hidden" name="' . esc_attr( $args['name'] ) . '" id="' . esc_attr( $args['id'] ) . '" value="' . $args['value'] . '"  class="hidden-field ' . esc_attr( $args['class'] ) . '" />';
 		}
 
 		/**
@@ -460,7 +460,7 @@ if ( ! class_exists( 'Bibleup_WordPressSettingsFramework' ) ) {
 		public function generate_number_field( $args ) {
 			$args['value'] = esc_attr( stripslashes( $args['value'] ) );
 
-			echo '<input type="number" name="' . $args['name'] . '" id="' . $args['id'] . '" value="' . $args['value'] . '" placeholder="' . $args['placeholder'] . '" class="regular-text ' . $args['class'] . '" />';
+			echo '<input type="number" name="' . esc_attr( $args['name'] ) . '" id="' . esc_attr( $args['id'] ) . '" value="' . $args['value'] . '" placeholder="' . esc_attr( $args['placeholder'] ) . '" class="regular-text ' . esc_attr( $args['class'] ) . '" />';
 
 			$this->generate_description( $args['desc'] );
 		}
@@ -475,7 +475,7 @@ if ( ! class_exists( 'Bibleup_WordPressSettingsFramework' ) ) {
 
 			$datepicker = ( ! empty( $args['datepicker'] ) ) ? htmlentities( json_encode( $args['datepicker'] ) ) : null;
 
-			echo '<input type="text" name="' . $args['name'] . '" id="' . $args['id'] . '" value="' . $args['value'] . '" class="datepicker regular-text ' . $args['class'] . '" data-datepicker="' . $datepicker . '" />';
+			echo '<input type="text" name="' . esc_attr( $args['name'] ) . '" id="' . esc_attr( $args['id'] ) . '" value="' . $args['value'] . '" class="datepicker regular-text ' . esc_attr( $args['class'] ) . '" data-datepicker="' . $datepicker . '" />';
 
 			$this->generate_description( $args['desc'] );
 		}
@@ -491,7 +491,7 @@ if ( ! class_exists( 'Bibleup_WordPressSettingsFramework' ) ) {
 			$option_group  = $this->option_group;
 			$export_url    = site_url() . '/wp-admin/admin-ajax.php?action=wpsf_export_settings&_wpnonce=' . wp_create_nonce( 'wpsf_export_settings' ) . '&option_group=' . $option_group;
 
-			echo '<a target=_blank href="' . $export_url . '" class="button" name="' . $args['name'] . '" id="' . $args['id'] . '">' . $args['value'] . '</a>';
+			echo '<a target=_blank href="' . $export_url . '" class="button" name="' . esc_attr( $args['name'] ) . '" id="' . esc_attr( $args['id'] ) . '">' . $args['value'] . '</a>';
 
 			$options = get_option( $option_group . '_settings' );
 			$this->generate_description( $args['desc'] );
@@ -548,10 +548,9 @@ if ( ! class_exists( 'Bibleup_WordPressSettingsFramework' ) ) {
 			}
 
 			echo '</tbody>';
-
 			echo '</table>';
 
-			printf( '<script type="text/html" id="%s_template">%s</script>', $args['id'], $this->generate_group_row_template( $args, true ) );
+			printf( '<script type="text/html" id="%s_template">%s</script>', esc_attr( $args['id'] ), $this->generate_group_row_template( $args, true ) );
 
 			$this->generate_description( $args['desc'] );
 		}
@@ -571,7 +570,7 @@ if ( ! class_exists( 'Bibleup_WordPressSettingsFramework' ) ) {
 			echo '<ul class="wpsf-visual-field wpsf-visual-field--image-checkboxes wpsf-visual-field--grid wpsf-visual-field--cols">';
 
 			foreach ( $args['choices'] as $value => $choice ) {
-				$field_id      = sprintf( '%s_%s', $args['id'], $value );
+				$field_id      = sprintf( '%s_%s', esc_attr( $args['id'] ), $value );
 				$is_checked    = is_array( $args['value'] ) && in_array( $value, $args['value'] );
 				$checked_class = $is_checked ? 'wpsf-visual-field__item--checked' : '';
 
@@ -615,7 +614,7 @@ if ( ! class_exists( 'Bibleup_WordPressSettingsFramework' ) ) {
 			echo sprintf( '<ul class="wpsf-visual-field wpsf-visual-field--image-radio wpsf-visual-field--grid wpsf-visual-field--cols wpsf-visual-field--col-%s ">', esc_attr( $count ) );
 
 			foreach ( $args['choices'] as $value => $choice ) {
-				$field_id = sprintf( '%s_%s', $args['id'], $value );
+				$field_id = sprintf( '%s_%s', esc_attr( $args['id'] ), $value );
 				$checked  = $value == $args['value'] ? 'checked="checked"' : '';
 
 				echo sprintf(
@@ -674,8 +673,8 @@ if ( ! class_exists( 'Bibleup_WordPressSettingsFramework' ) ) {
 					$subfield = wp_parse_args( $subfield, $this->setting_defaults );
 
 					$subfield['value'] = ( $blank ) ? '' : ( isset( $args['value'][ $row ][ $subfield['id'] ] ) ? $args['value'][ $row ][ $subfield['id'] ] : '' );
-					$subfield['name']  = sprintf( '%s[%d][%s]', $args['name'], $row, $subfield['id'] );
-					$subfield['id']    = sprintf( '%s_%d_%s', $args['id'], $row, $subfield['id'] );
+					$subfield['name']  = sprintf( '%s[%d][%s]', esc_attr( $args['name'] ), $row, $subfield['id'] );
+					$subfield['id']    = sprintf( '%s_%d_%s', esc_attr( $args['id'] ), $row, $subfield['id'] );
 
 					$class = sprintf( 'wpsf-group__field-wrapper--%s', $subfield['type'] );
 
@@ -693,7 +692,7 @@ if ( ! class_exists( 'Bibleup_WordPressSettingsFramework' ) ) {
 
 				$row_template .= '<td class="wpsf-group__row-actions">';
 
-				$row_template .= sprintf( '<a href="javascript: void(0);" class="wpsf-group__row-add" data-template="%s_template"><span class="dashicons dashicons-plus-alt"></span></a>', $args['id'] );
+				$row_template .= sprintf( '<a href="javascript: void(0);" class="wpsf-group__row-add" data-template="%s_template"><span class="dashicons dashicons-plus-alt"></span></a>', esc_attr( $args['id'] ) );
 				$row_template .= '<a href="javascript: void(0);" class="wpsf-group__row-remove"><span class="dashicons dashicons-trash"></span></a>';
 
 				$row_template .= '</td>';
@@ -743,7 +742,7 @@ if ( ! class_exists( 'Bibleup_WordPressSettingsFramework' ) ) {
 		public function generate_password_field( $args ) {
 			$args['value'] = esc_attr( stripslashes( $args['value'] ) );
 
-			echo '<input type="password" name="' . $args['name'] . '" id="' . $args['id'] . '" value="' . $args['value'] . '" placeholder="' . $args['placeholder'] . '" class="regular-text ' . $args['class'] . '" />';
+			echo '<input type="password" name="' . esc_attr( $args['name'] ) . '" id="' . esc_attr( $args['id'] ) . '" value="' . $args['value'] . '" placeholder="' . esc_attr( $args['placeholder'] ) . '" class="regular-text ' . esc_attr( $args['class'] ) . '" />';
 
 			$this->generate_description( $args['desc'] );
 		}
@@ -756,7 +755,7 @@ if ( ! class_exists( 'Bibleup_WordPressSettingsFramework' ) ) {
 		public function generate_textarea_field( $args ) {
 			$args['value'] = esc_html( esc_attr( $args['value'] ) );
 
-			echo '<textarea name="' . $args['name'] . '" id="' . $args['id'] . '" placeholder="' . $args['placeholder'] . '" rows="5" cols="60" class="' . $args['class'] . '">' . $args['value'] . '</textarea>';
+			echo '<textarea name="' . esc_attr( $args['name'] ) . '" id="' . esc_attr( $args['id'] ) . '" placeholder="' . esc_attr( $args['placeholder'] ) . '" rows="15" cols="60" class="' . esc_attr( $args['class'] ) . '">' . $args['value'] . '</textarea>';
 
 			$this->generate_description( $args['desc'] );
 		}
@@ -770,10 +769,10 @@ if ( ! class_exists( 'Bibleup_WordPressSettingsFramework' ) ) {
 			$args['value'] = esc_html( esc_attr( $args['value'] ) );
 
 			foreach ( $args['choices'] as $value => $text ) {
-				$field_id = sprintf( '%s_%s', $args['id'], $value );
+				$field_id = sprintf( '%s_%s', esc_attr( $args['id'] ), $value );
 				$checked  = ( $value == $args['value'] ) ? 'checked="checked"' : '';
 
-				echo sprintf( '<label><input type="radio" name="%s" id="%s" value="%s" class="%s" %s> %s</label><br />', $args['name'], $field_id, $value, $args['class'], $checked, $text );
+				echo sprintf( '<label><input type="radio" name="%s" id="%s" value="%s" class="%s" %s> %s</label><br />', esc_attr( $args['name'] ), $field_id, $value, $args['class'], $checked, $text );
 			}
 
 			$this->generate_description( $args['desc'] );
@@ -788,8 +787,8 @@ if ( ! class_exists( 'Bibleup_WordPressSettingsFramework' ) ) {
 			$args['value'] = esc_attr( stripslashes( $args['value'] ) );
 			$checked       = ( $args['value'] ) ? 'checked="checked"' : '';
 
-			echo '<input type="hidden" name="' . $args['name'] . '" value="0" />';
-			echo '<label><input type="checkbox" name="' . $args['name'] . '" id="' . $args['id'] . '" value="1" class="' . $args['class'] . '" ' . $checked . '> ' . $args['desc'] . '</label>';
+			echo '<input type="hidden" name="' . esc_attr( $args['name'] ) . '" value="0" />';
+			echo '<label><input type="checkbox" name="' . esc_attr( $args['name'] ) . '" id="' . esc_attr( $args['id'] ) . '" value="1" class="' . esc_attr( $args['class'] ) . '" ' . $checked . '> ' . esc_attr( $args['desc'] ) . '</label>';
 		}
 
 		/**
@@ -801,8 +800,8 @@ if ( ! class_exists( 'Bibleup_WordPressSettingsFramework' ) ) {
 			$args['value'] = esc_attr( stripslashes( $args['value'] ) );
 			$checked       = ( $args['value'] ) ? 'checked="checked"' : '';
 
-			echo '<input type="hidden" name="' . $args['name'] . '" value="0" />';
-			echo '<label class="switch"><input type="checkbox" name="' . $args['name'] . '" id="' . $args['id'] . '" value="1" class="' . $args['class'] . '" ' . $checked . '> ' . $args['desc'] . '<span class="slider"></span></label>';
+			echo '<input type="hidden" name="' . esc_attr( $args['name'] ) . '" value="0" />';
+			echo '<label class="switch"><input type="checkbox" name="' . esc_attr( $args['name'] ) . '" id="' . esc_attr( $args['id'] ) . '" value="1" class="' . esc_attr( $args['class'] ) . '" ' . $checked . '> ' . esc_attr( $args['desc'] ) . '<span class="slider"></span></label>';
 		}
 
 		/**
@@ -811,15 +810,15 @@ if ( ! class_exists( 'Bibleup_WordPressSettingsFramework' ) ) {
 		 * @param array $args
 		 */
 		public function generate_checkboxes_field( $args ) {
-			echo '<input type="hidden" name="' . $args['name'] . '" value="0" />';
+			echo '<input type="hidden" name="' . esc_attr( $args['name'] ) . '" value="0" />';
 
 			echo '<ul class="wpsf-list wpsf-list--checkboxes">';
 
 			foreach ( $args['choices'] as $value => $text ) {
 				$checked  = ( is_array( $args['value'] ) && in_array( strval( $value ), array_map( 'strval', $args['value'] ), true ) ) ? 'checked="checked"' : '';
-				$field_id = sprintf( '%s_%s', $args['id'], $value );
+				$field_id = sprintf( '%s_%s', esc_attr( $args['id'] ), $value );
 
-				echo sprintf( '<li><label><input type="checkbox" name="%s[]" id="%s" value="%s" class="%s" %s> %s</label></li>', $args['name'], $field_id, $value, $args['class'], $checked, $text );
+				echo sprintf( '<li><label><input type="checkbox" name="%s[]" id="%s" value="%s" class="%s" %s> %s</label></li>', esc_attr( $args['name'] ), $field_id, $value, esc_attr($args['class']), $checked, $text );
 			}
 
 			echo '</ul>';
@@ -833,12 +832,12 @@ if ( ! class_exists( 'Bibleup_WordPressSettingsFramework' ) ) {
 		 * @param array $args
 		 */
 		public function generate_color_field( $args ) {
-			$color_picker_id = sprintf( '%s_cp', $args['id'] );
+			$color_picker_id = sprintf( '%s_cp', esc_attr( $args['id'] ) );
 			$args['value']   = esc_attr( stripslashes( $args['value'] ) );
 
 			echo '<div style="position:relative;">';
 
-			echo sprintf( '<input type="text" name="%s" id="%s" value="%s" class="%s">', $args['name'], $args['id'], $args['value'], $args['class'] );
+			echo sprintf( '<input type="text" name="%s" id="%s" value="%s" class="%s">', esc_attr( $args['name'] ), esc_attr( $args['id'] ), $args['value'], esc_attr( $args['class'] ) );
 
 			echo sprintf( '<div id="%s" style="position:absolute;top:0;left:190px;background:#fff;z-index:9999;"></div>', $color_picker_id );
 
@@ -847,12 +846,12 @@ if ( ! class_exists( 'Bibleup_WordPressSettingsFramework' ) ) {
 			echo '<script type="text/javascript">
                 jQuery(document).ready(function($){
                     var colorPicker = $("#' . $color_picker_id . '");
-                    colorPicker.farbtastic("#' . $args['id'] . '");
+                    colorPicker.farbtastic("#' . esc_attr( $args['id'] ) . '");
                     colorPicker.hide();
-                    $("#' . $args['id'] . '").on("focus", function(){
+                    $("#' . esc_attr( $args['id'] ) . '").on("focus", function(){
                         colorPicker.show();
                     });
-                    $("#' . $args['id'] . '").on("blur", function(){
+                    $("#' . esc_attr( $args['id'] ) . '").on("blur", function(){
                         colorPicker.hide();
                         if($(this).val() == "") $(this).val("#");
                     });
@@ -869,9 +868,9 @@ if ( ! class_exists( 'Bibleup_WordPressSettingsFramework' ) ) {
 		 */
 		public function generate_file_field( $args ) {
 			$args['value'] = esc_attr( $args['value'] );
-			$button_id     = sprintf( '%s_button', $args['id'] );
+			$button_id     = sprintf( '%s_button', esc_attr( $args['id'] ) );
 
-			echo sprintf( '<input type="text" name="%s" id="%s" value="%s" class="regular-text %s"> ', $args['name'], $args['id'], $args['value'], $args['class'] );
+			echo sprintf( '<input type="text" name="%s" id="%s" value="%s" class="regular-text %s"> ', esc_attr( $args['name'] ), esc_attr( $args['id'] ), $args['value'], esc_attr( $args['class'] ) );
 
 			echo sprintf( '<input type="button" class="button wpsf-browse" id="%s" value="Browse" />', $button_id );
 
@@ -942,7 +941,7 @@ if ( ! class_exists( 'Bibleup_WordPressSettingsFramework' ) ) {
 		 * @param array $args
 		 */
 		public function generate_editor_field( $args ) {
-			wp_editor( $args['value'], $args['id'], array( 'textarea_name' => $args['name'] ) );
+			wp_editor( esc_attr( $args['value'] ), esc_attr( $args['id'] ), array( 'textarea_name' => esc_attr( $args['name'] ) ) );
 
 			$this->generate_description( $args['desc'] );
 		}
@@ -1012,11 +1011,11 @@ if ( ! class_exists( 'Bibleup_WordPressSettingsFramework' ) ) {
 			$i = 0;
 			while ( $i < count( $values ) ) :
 
-				$field_id = sprintf( '%s_%s', $args['id'], $i );
+				$field_id = sprintf( '%s_%s', esc_attr( $args['id'] ), $i );
 				$value    = esc_attr( stripslashes( $values[ $i ] ) );
 
 				echo '<div class="wpsf-multifields__field">';
-				echo '<input type="text" name="' . $args['name'] . '[]" id="' . $field_id . '" value="' . $value . '" class="regular-text ' . $args['class'] . '" placeholder="' . $args['placeholder'] . '" />';
+				echo '<input type="text" name="' . esc_attr( $args['name'] ) . '[]" id="' . $field_id . '" value="' . $value . '" class="regular-text ' . esc_attr( $args['class'] ) . '" placeholder="' . esc_attr( $args['placeholder'] ) . '" />';
 				echo '<br><span>' . $field_titles[ $i ] . '</span>';
 				echo '</div>';
 
