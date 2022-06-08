@@ -92,6 +92,7 @@ class BibleUp {
 			} else if ($prop == 'true') {
 				return 'true';
 			} else {
+				$prop = esc_js($prop);
 				return "'${prop}'";
 			}
 		};
@@ -122,6 +123,7 @@ class BibleUp {
 	
 	function get_raw_options() {
 		$raw_options = wpsf_get_setting_bibleup( 'bibleup', 'tab_2_paste_config', 'raw_options' );
+		
 		echo "
 		<script src='$this->script'></script>
 		<script>
