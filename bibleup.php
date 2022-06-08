@@ -87,7 +87,7 @@ class BibleUp {
 		// tab_2 section ID - paste_config
 		
 		$call = function($prop, $default) {
-			if ($prop == 'false' || $prop == '') {
+			if ($prop == 'false' || empty($prop) ) {
 				return $default;
 			} else if ($prop == 'true') {
 				return 'true';

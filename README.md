@@ -5,11 +5,10 @@ An official WordPress plugin for BibleUp.
 
 Set up BibleUp on your WordPress site easily by using the plugin.
 BibleUp options can be configured using the settings page.
----
 
 ##  To Do
 - [x] Problem with jquery file (jquery-ui-css.css) called remotely
 - [ ] Undocumented use of BibleUp core called from jsdelivr
-- [ ] Calling images from your own domain - They should be included in your plugin.
+- [x] Calling images from your own domain - They should be included in your plugin.
 - [ ] Use wp_enqueue command for BibleUp script
 - [ ] Variables and options must be escaped when echo'd (This was mentioned for the input tags)

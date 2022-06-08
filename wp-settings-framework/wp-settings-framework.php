@@ -230,7 +230,7 @@ if ( ! class_exists( 'Bibleup_WordPressSettingsFramework' ) ) {
 		public function settings_header() {
 			?>
 			<div class="wpsf-settings__header">
-				<img src='https://avatars.githubusercontent.com/u/80137903?s=200&v=4' width="50" height="50" alt="BibleUp Logo"/>
+				<img src="<?php echo plugin_dir_url( __FILE__ ) . 'assets/img/logo.png'; ?>" width="50" height="50" alt="BibleUp Logo"/>
 				<h1><?php echo apply_filters( 'wpsf_title_' . $this->option_group, $this->settings_page['title'] ); ?></h1>
 				<?php do_action( 'wpsf_after_title_' . $this->option_group ); ?>
 			</div>

@@ -52,7 +52,7 @@ function wpsf_tabbed_settings( $wpsf_settings ) {
 			'section_description' => '<b>Please read the following first before you begin to configure BibleUp</b><br>
 			There are two methods you can use to configure BibleUp - <b>select Options</b> or <b>Paste Config</b><br>
 			Use the <b>Select Options</b> forms below to set your options manually or the <b>Paste Config</b> to paste generated config options from the editor (Recommended)<br><br>
-			Set any option to <b>false</b> or no to get the default value<br>
+			Set any option to <b>false</b> or leave empty to get the default value<br>
 			For full documentation of these options, check the <a href="https://bibleup.netlify.app/docs">docs</a>',
 			'section_title' => 'NOTE',
 			'section_order' => 10,
