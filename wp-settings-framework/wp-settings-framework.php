@@ -1363,7 +1363,7 @@ if ( ! function_exists( 'wpsf_delete_settings_bibleup' ) ) {
 	 *
 	 * @param string $option_group
 	 */
-	function Bibleup_wpsf_delete_settings_bibleup( $option_group ) {
+	function wpsf_delete_settings_bibleup( $option_group ) {
 		delete_option( $option_group . '_settings' );
 	}
 }

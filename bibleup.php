@@ -19,7 +19,7 @@ class BibleUp {
 	// BibleUp constructor.
 	function __construct() {
 		$this->plugin_path = plugin_dir_path( __FILE__ );
-		$this->script = 'https://cdn.jsdelivr.net/npm/@bibleup/bibleup@beta'; //pegged to major version
+		$this->script = 'https://cdn.jsdelivr.net/npm/@bibleup/bibleup@beta'; //this service is documented and delivery is pegged to major version
 
 		// Include and create a new Bibleup_WordPressSettingsFramework
 		require_once( $this->plugin_path . 'wp-settings-framework/wp-settings-framework.php' );
@@ -57,11 +57,19 @@ class BibleUp {
 	}
 	
 	function start() {
+		add_action( 'wp_enqueue_scripts', array( $this, 'handle_scripts' ) );
+	}
+
+	function handle_scripts() {
 		$raw_options = wpsf_get_setting_bibleup( 'bibleup', 'tab_2_paste_config', 'raw_options' );
+		wp_enqueue_script( 'bibleup', $this->script, null, null, true );
+
 		if (empty($raw_options)) {
-			add_action('wp_footer', array( $this, 'get_select_options' ));
+			$data = $this->get_select_options();
+			wp_add_inline_script('bibleup', $data, 'after');
 		} else {
-			add_action('wp_footer', array( $this, 'get_raw_options' ));
+			$data_r = $this->get_raw_options();
+			wp_add_inline_script('bibleup', $data_r, 'after');
 		}
 	}
 
@@ -86,9 +94,9 @@ class BibleUp {
 		$bu_ignore = wpsf_get_setting_bibleup( 'bibleup', 'tab_1_additional', 'bu_ignore' );
 		// tab_2 section ID - paste_config
 		
-		$call = function($prop, $default) {
+		$call = function($prop, $default, $isArray=false) {
 			if ($prop == 'false' || empty($prop) ) {
-				return $default;
+				return ($isArray) ? $default : "'$default'";
 			} else if ($prop == 'true') {
 				return 'true';
 			} else {
@@ -96,16 +104,14 @@ class BibleUp {
 				return "'${prop}'";
 			}
 		};
-		
-		echo "
-		<script src='$this->script'></script>
-    	<script>
+
+		$r = "
 			let b = new BibleUp(document.body, {
-  				popup: ". $call($popup, null) .",
-				version: ". $call($version, null) .",
-				darkTheme: ". $call($dark_theme, null) .",
-				bu_ignore: ". $call($bu_ignore, '["H1", "H2", "H3", "H4", "H5", "H6", "IMG", "A"]') .",
-				bu_allow: ". $call($bu_allow, '[]') .",
+  				popup: ". $call($popup, 'classic') .",
+				version: ". $call($version, 'KJV') .",
+				darkTheme: ". $call($dark_theme, 'false') .",
+				bu_ignore: ". $call($bu_ignore, '["H1", "H2", "H3", "H4", "H5", "H6", "IMG", "A"]', true) .",
+				bu_allow: ". $call($bu_allow, '[]', true) .",
 				styles: {
 					primary: ". $call($primary, 'false') .",
 					secondary: ". $call($secondary, 'false') .", 
@@ -117,23 +123,28 @@ class BibleUp {
 					fontSize: ". $call($font_size, 'false') .",
 				}
 			})
-			b.create();
-		</script>";
+			b.create();";
+
+		return $r;
 	}
 	
 	function get_raw_options() {
 		$raw_options = wpsf_get_setting_bibleup( 'bibleup', 'tab_2_paste_config', 'raw_options' );
-		
-		echo "
-		<script src='$this->script'></script>
-		<script>
+
+		$r = "
 			let b = new BibleUp(document.body, ".$raw_options.");
-			b.create();
-		</script>
-		";
+			b.create();";
+
+		return $r;
+	}
+
+	function bibleup_deactivate() {
+		// Delete all saved settings from option group - bibleup
+		wpsf_delete_settings_bibleup( 'bibleup' );
 	}
 	
 }
 
 $bibleup = new BibleUp();
 $bibleup->start();
+register_deactivation_hook( __FILE__, array( 'BibleUp', 'bibleup_deactivate' ) );
