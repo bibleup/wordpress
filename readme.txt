@@ -11,11 +11,14 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.html
 BibleUp transforms Bible references on a webpage into links and the makes the corresponding text accessible via a flexible and highly-customizable popover.
 
 == Description ==
-[BibleUp](https://bibleup.netlify.app/) is a web tool that makes text of Bible references on a webpage easily accessible when hovered or clicked. BibleUp does this by transforming all Bible Reference on a page into hyperlinks, hovering or clicking on these links will display the corresponding Bible text via a feature-rich popover.
+[**BibleUp**](https://bibleup.netlify.app/) is a web tool that makes text of Bible references on a webpage easily accessible when hovered or clicked. 
+BibleUp transforms all Bible Reference on a page into hyperlinks, hovering or clicking on these links will display the corresponding Bible text via a feature-rich popover.
 
 With **BibleUp**, the text of Bible references can be looked up easily without having to switch to a different tab or app.
 
-> This is the official WordPress plugin for BibleUp and it relies on [BibleUp Core](https://github.com/bibleup/bibleup) and the regulated distribution of essential [files](https://www.jsdelivr.com/package/npm/@bibleup/bibleup) via our CDN.
+> **Note:**
+> This is the official WordPress plugin for BibleUp and it relies on the development of [BibleUp Core](https://github.com/bibleup/bibleup).
+> We use a third-party service to provide for the regulated distribution of essential [files](https://www.jsdelivr.com/package/npm/@bibleup/bibleup). The use of this plugin requires user's consent to the [Terms & Policies - jsDelivr](https://www.jsdelivr.com/terms). No personal data is collected.
 
 ## Features 💡
 
@@ -31,7 +34,7 @@ With **BibleUp**, the text of Bible references can be looked up easily without h
 
  - See how BibleUp works on our [demo page](https://bibleup.netlify.app/demo).
  - Check out [the editor](https://bibleup.netlify.app/demo/#editor) to play with customization and styling.
- - For developers: Configure BibleUp options in the [code playground](https://stackblitz.com/edit/bibleup).
+ - For developers: Configure BibleUp options live using the [code playground](https://stackblitz.com/edit/bibleup).
 
 == Frequently Asked Questions ==
 = How many versions does BibleUp supports =
