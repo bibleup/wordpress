@@ -18,7 +18,7 @@ With **BibleUp**, the text of Bible references can be looked up easily without h
 
 > **Note:**
 > This is the official WordPress plugin for BibleUp and it relies on the development of [BibleUp Core](https://github.com/bibleup/bibleup).
-> We use a third-party service to provide for the regulated distribution of essential [files](https://www.jsdelivr.com/package/npm/@bibleup/bibleup). The use of this plugin requires user's consent to the [Terms & Policies - jsDelivr](https://www.jsdelivr.com/terms). No personal data is collected.
+> We use third-party service to provide for the regulated distribution of essential [files](https://www.jsdelivr.com/package/npm/@bibleup/bibleup). The use of this plugin requires your consent to the [Terms & Policies - jsDelivr](https://www.jsdelivr.com/terms). No personal data is collected.
 
 ## Features 💡
 
