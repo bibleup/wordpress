@@ -3,7 +3,7 @@
    Plugin Name: BibleUp
    Plugin URI: https://bibleup.netlify.com
    description: BibleUp transforms Bible References on a webpage into flexible, and highly customisable popovers.  
-   Version: 1.0
+   Version: 1.0.0
    Author: BibleUp
    Author URI: https://bibleup.netlify.com
    License: GPLv3
