@@ -11,14 +11,14 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.html
 BibleUp transforms Bible references on a webpage into links and the makes the corresponding text accessible via a flexible and highly-customizable popover.
 
 == Description ==
-[**BibleUp**](https://bibleup.netlify.app/) is a web tool that makes text of Bible references on a webpage easily accessible when hovered or clicked. 
-BibleUp transforms all Bible Reference on a page into hyperlinks, hovering or clicking on these links will display the corresponding Bible text via a feature-rich popover.
+[**BibleUp**](https://bibleup.netlify.app/) is a configurable web tool that makes the text of Bible references on a webpage easily accessible when hovered or clicked.<br>
+BibleUp transforms all Bible Reference on a page into hyperlinks, hovering or clicking on these links will display the corresponding Bible text via a feature-rich and highly customizable popover.<br><br>
 
-With **BibleUp**, the text of Bible references can be looked up easily without having to switch to a different tab or app.
+With **BibleUp**, Bible references can be looked up easily without having to switch to a different tab or app.
 
 > **Note:**
 > This is the official WordPress plugin for BibleUp and it relies on the development of [BibleUp Core](https://github.com/bibleup/bibleup).
-> We use third-party service to provide for the regulated distribution of essential [files](https://www.jsdelivr.com/package/npm/@bibleup/bibleup). The use of this plugin requires your consent to the [Terms & Policies - jsDelivr](https://www.jsdelivr.com/terms). No personal data is collected.
+> We use a third-party service to provide for the regulated distribution of essential [files](https://www.jsdelivr.com/package/npm/@bibleup/bibleup). The use of this plugin requires your consent to the [Terms & Policies - jsDelivr](https://www.jsdelivr.com/terms). No personal data is collected.
 
 ## Features 💡
 
@@ -41,7 +41,7 @@ With **BibleUp**, the text of Bible references can be looked up easily without h
 BibleUp currently supports 4 Bible versions with much more to come. These versions are the Authorized King James Version (KJV), Authorized Standard Version (ASV), Literal Standard Version (LSV) and the World English Bible (WEB).
 
 = How to report an issue or submit feature requests =
-We try respond to feedbacks across all supported platforms.
+We try respond to all feedbacks across our supported platforms.
 In order of their quick response time:
 
  1. [Github](https://github.com/bibleup/wordpress/issues) (all issues, requests and contributions)
@@ -49,36 +49,39 @@ In order of their quick response time:
  3. [Website form](https://bibleup.netlify.app/#contact) (general happy feedbacks)
 
 = How is the development going =
-BibleUp recently lauched v1.0.0 and there is so much more to come. 
-We plan to roll out more Bible versions, allow for compare features and lots more before the next major release.
-
-= How can I keep tabs on development and help support =
+BibleUp recently lauched v1.0.0 and there is so much more to come!<br>
+We plan to roll out more Bible versions, allow for compare features and lots more before the next major release.<br><br>
 The best way to take part in development is by following us on [Github](https://github.com/bibleup), making contributions and giving us a star.
-You can also share this tool to as many as would find it helpful, rate us and please drop a review. 
+
+= How can I help support =
+We currently do not accept financial support, but there are **many other ways** you can contribute to this project.
+We have a short guide on how to support as a blogger, developer, an organisation and even as a reviewer.<br><br>
+Please rate us and drop a review. You can also share this tool to as many as would find it helpful. 
 Thank you for every contribution you make!
 
 == Screenshots ==
-1. Settings page
-2. BibleUp in action
-3. The editor
+1. Settings page(1)
+2. Settings page(2)
+3. BibleUp popover on a reference
+4. The editor
 
 == Installation ==
 = Install BibleUp within WordPress =
 
-1) From your site dashboard, navigate to Plugins >> Add New.
-2) Search for \'BibleUp\' in the search box provided on screen.
-3) Click the \'Install Now\' button
+1) From your site dashboard, go to **Plugins >> Add New**
+2) Search for 'BibleUp' in the search box provided on screen.
+3) Click the 'Install Now' button
 4) Activate the plugin and configure the options as you want!
 
 = Install BibleUp manually =
 
-1) Get the source code (here)[https://downloads.wordpress.org/plugin/bibleup.zip]
-2) From your site dashboard, navigate to Plugins >> Add New.
-3) Click on the \'Upload Plugin\' button at the top left corner to reveal the file picker.
+1) Get the source code [here](https://downloads.wordpress.org/plugin/bibleup.zip)
+2) From your site dashboard, go to **Plugins >> Add New**
+3) Click on the 'Upload Plugin' button at the top left corner to reveal the file picker.
 4) Select and upload the downloaded zip file.
 5) Install the Plugin and activate once done. Configure the options as you want!
 
-You can find the settings page at settings >> BibleUp, after activating the plugin.
+You can find the settings page at **settings >> BibleUp** after activating the plugin.
 
 == Changelog ==
 = 1.0.0 =
