@@ -2,7 +2,7 @@
 /*
    Plugin Name: BibleUp
    Plugin URI: https://bibleup.netlify.com
-   description: BibleUp transforms Bible References on a webpage into flexible, and highly customisable popovers.  
+   description: BibleUp transforms Bible References on a webpage into flexible, and highly customisable popovers.
    Version: 1.0.0
    Author: BibleUp
    Author URI: https://bibleup.netlify.com
@@ -11,7 +11,7 @@
    */
 
 class BibleUp {
-	
+
 	private $plugin_path; // @var string
 	private $wpsf; // @var Bibleup_WordPressSettingsFramework
 	private $script; // CDN delivered and source-controlled
@@ -27,7 +27,7 @@ class BibleUp {
 
 		// Add admin menu
 		add_action( 'admin_menu', array( $this, 'add_settings_page' ), 20 );
-		
+
 		// Add an optional settings validation filter (recommended)
 		add_filter( $this->wpsf->get_option_group() . '_settings_validate', array( &$this, 'validate_settings' ) );
 	}
@@ -52,10 +52,10 @@ class BibleUp {
 	function validate_settings( $input ) {
 		// Do your settings validation here
 		// Same as $sanitize_callback from http://codex.wordpress.org/Function_Reference/register_setting
-		// sanitize 
+		// sanitize
 		return $input;
 	}
-	
+
 	function start() {
 		add_action( 'wp_enqueue_scripts', array( $this, 'handle_scripts' ) );
 	}
@@ -92,8 +92,7 @@ class BibleUp {
 		// tab_1 section ID - additional
 		$bu_allow = wpsf_get_setting_bibleup( 'bibleup', 'tab_1_additional', 'bu_allow' );
 		$bu_ignore = wpsf_get_setting_bibleup( 'bibleup', 'tab_1_additional', 'bu_ignore' );
-		// tab_2 section ID - paste_config
-		
+
 		$call = function($prop, $default, $isArray=false) {
 			if ($prop == 'false' || empty($prop) ) {
 				return ($isArray) ? $default : "'$default'";
@@ -110,14 +109,16 @@ class BibleUp {
   				popup: ". $call($popup, 'classic') .",
 				version: ". $call($version, 'KJV') .",
 				darkTheme: ". $call($dark_theme, 'false') .",
-				bu_ignore: ". $call($bu_ignore, '["H1", "H2", "H3", "H4", "H5", "H6", "IMG", "A"]', true) .",
+				bu_ignore: ". $call($bu_ignore, '["H1", "H2", "H3", "H4", "H5", "H6", "A"]', true) .",
 				bu_allow: ". $call($bu_allow, '[]', true) .",
 				styles: {
 					primary: ". $call($primary, 'false') .",
-					secondary: ". $call($secondary, 'false') .", 
+					secondary: ". $call($secondary, 'false') .",
 					tertiary: ". $call($tertiary, 'false') .",
 					headerColor: ". $call($header_color, 'false') .",
-					color: [". $call($font_color, 'false') .", ". $call($version_color, 'false') .", ". $call($close_color, 'false') ."],
+					fontColor: ". $call($font_color, 'false') .",
+					versionColor: ". $call($version_color, 'false') .",
+					closeColor: ". $call($close_color, 'false') .",
 					borderRadius: ". $call($border_radius, 'false') .",
 					boxShadow: ". $call($box_shadow, 'false') .",
 					fontSize: ". $call($font_size, 'false') .",
@@ -127,7 +128,7 @@ class BibleUp {
 
 		return $r;
 	}
-	
+
 	function get_raw_options() {
 		$raw_options = wpsf_get_setting_bibleup( 'bibleup', 'tab_2_paste_config', 'raw_options' );
 
@@ -142,7 +143,7 @@ class BibleUp {
 		// Delete all saved settings from option group - bibleup
 		wpsf_delete_settings_bibleup( 'bibleup' );
 	}
-	
+
 }
 
 $bibleup = new BibleUp();
