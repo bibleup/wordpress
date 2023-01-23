@@ -49,7 +49,7 @@ function wpsf_tabbed_settings( $wpsf_settings ) {
 		array(
 			'tab_id'        => 'tab_1',
 			'section_id'    => 'note',
-			'section_description' => '<b>Please read the following first before you begin to configure BibleUp</b><br>
+			'section_description' => '<b>Please read the following before you begin to configure BibleUp</b><br>
 			There are two methods you can use to configure BibleUp - <b>select Options</b> or <b>Paste Config</b><br>
 			Use the <b>Select Options</b> forms below to set your options manually or the <b>Paste Config</b> to paste generated config options from the editor (Recommended)<br><br>
 			Set any option to <b>false</b> or leave empty to get the default value<br>
@@ -102,7 +102,7 @@ function wpsf_tabbed_settings( $wpsf_settings ) {
 				),
 			),
 		),
-        
+
 		array(
 			'tab_id'        => 'tab_1',
 			'section_id'    => 'popup_style',
@@ -226,9 +226,23 @@ function wpsf_tabbed_settings( $wpsf_settings ) {
 						'external' => true,
 					),
 				),
+				array(
+					'id'      => 'buid',
+					'title'   => 'BibleUp ID (buid)',
+					'desc'    => "Attach a specific HTML ID attribute to popovers and links",
+					'type'    => 'text',
+					'placeholder'    => "buid string",
+					'default' => 'false',
+					'link'     => array(
+						'url'      => esc_url( 'https://bibleup.netlify.app/docs/customisation/#buid' ),
+						'type'     => 'link', // Can be 'tooltip' or 'link'. Default is 'tooltip'.
+						'text'     => 'Learn More',
+						'external' => true,
+					),
+				),
 			),
         ),
-			
+
 		array(
 			'tab_id'        => 'tab_2',
 			'section_id'    => 'paste_config',
@@ -242,8 +256,33 @@ function wpsf_tabbed_settings( $wpsf_settings ) {
 					'id'      => 'raw_options',
 					'title'   => 'Raw Options',
 					'desc'    => 'Paste the raw config options here',
-					'type'        => 'textarea',
+					'type'        => 'code_editor',
+					'mimetype' => 'text/javascript',
 					'default' => '',
+				),
+			),
+		),
+
+		array(
+			'tab_id'        => 'tab_2',
+			'section_id'    => 'custom_css',
+			'section_title' => 'Custom CSS',
+			'section_description' => 'Enter any custom CSS here to extensively style popup and links. <br>You can also re-define BibleUp CSS variables using the <b>:root</b> selector.<br> Check the guide <a href="">here</a> for how to style using the <b>buid</b> property.',
+			'section_order' => 10,
+			'fields'        => array(
+				array(
+					'id'      => 'custom_css',
+					'title'   => 'Custom CSS',
+					'desc'    => 'Enter custom CSS',
+					'type'        => 'code_editor',
+					'mimetype' => 'text/css',
+					'default' => '',
+					'link'     => array(
+						'url'      => esc_url( 'https://bibleup.netlify.app/docs/customisation/' ),
+						'type'     => 'link', // Can be 'tooltip' or 'link'. Default is 'tooltip'.
+						'text'     => 'Learn More',
+						'external' => true,
+					),
 				),
 			),
 		),

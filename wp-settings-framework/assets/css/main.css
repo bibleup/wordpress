@@ -222,7 +222,7 @@ p.submit {
 	-webkit-font-smoothing: antialiased;
 	-moz-font-smoothing: antialiased;
 	-o-font-smoothing: antialiased;
-	font-smoothing: antialiased;
+	font-smooth: auto;
 	font-size: 1.25em;
 }
 
@@ -423,7 +423,7 @@ p.submit {
 	margin-top: -3px;
 }
 
-.wpsf-section label.switch input { 
+.wpsf-section label.switch input {
 	opacity: 0;
 	width: 0;
 	height: 0;
@@ -486,7 +486,7 @@ p.submit {
 .wpsf-multifields__field {
 	width: 25%;
 	float: left;
-	display: inline-block;
+	/* display: inline-block; */
 	padding-right: 10px;
 	-webkit-box-sizing: border-box;
 	-moz-box-sizing: border-box;
@@ -664,4 +664,10 @@ ul.wpsf-visual-field--image-radio img {
 
 .wpsf-visual-field__item-footer {
     padding: 12px 19px;
+}
+
+.codeMirror {
+	margin: 10px;
+	border: 2px solid #ccc;
+	border-radius: 5px;
 }

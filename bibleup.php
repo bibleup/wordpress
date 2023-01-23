@@ -92,6 +92,7 @@ class BibleUp {
 		// tab_1 section ID - additional
 		$bu_allow = wpsf_get_setting_bibleup( 'bibleup', 'tab_1_additional', 'bu_allow' );
 		$bu_ignore = wpsf_get_setting_bibleup( 'bibleup', 'tab_1_additional', 'bu_ignore' );
+		$buid = wpsf_get_setting_bibleup( 'bibleup', 'tab_1_additional', 'buid' );
 
 		$call = function($prop, $default, $isArray=false) {
 			if ($prop == 'false' || empty($prop) ) {
@@ -119,6 +120,7 @@ class BibleUp {
 					fontColor: ". $call($font_color, 'false') .",
 					versionColor: ". $call($version_color, 'false') .",
 					closeColor: ". $call($close_color, 'false') .",
+					buid: ". $call($buid, 'false') .",
 					borderRadius: ". $call($border_radius, 'false') .",
 					boxShadow: ". $call($box_shadow, 'false') .",
 					fontSize: ". $call($font_size, 'false') .",
