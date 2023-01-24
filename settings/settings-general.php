@@ -257,7 +257,7 @@ function wpsf_tabbed_settings( $wpsf_settings ) {
 					'title'   => 'Raw Options',
 					'desc'    => 'Paste the raw config options here',
 					'type'        => 'code_editor',
-					'mimetype' => 'text/javascript',
+					'mimetype' => 'application/json',
 					'default' => '',
 				),
 			),
