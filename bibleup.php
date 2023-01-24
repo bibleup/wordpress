@@ -19,7 +19,9 @@ class BibleUp {
 	// BibleUp constructor.
 	function __construct() {
 		$this->plugin_path = plugin_dir_path( __FILE__ );
-		$this->script = 'https://cdn.jsdelivr.net/npm/@bibleup/bibleup@beta'; //this service is documented and delivery is pegged to major version
+		//this service is documented and delivery is pegged to major version
+		$this->script = 'https://cdn.jsdelivr.net/npm/@bibleup/bibleup@beta/dist/umd/bibleup-core.min.js';
+		$this->style = 'https://cdn.jsdelivr.net/npm/@bibleup/bibleup@beta/dist/css/bibleup.css';
 
 		// Include and create a new Bibleup_WordPressSettingsFramework
 		require_once( $this->plugin_path . 'wp-settings-framework/wp-settings-framework.php' );
@@ -62,15 +64,27 @@ class BibleUp {
 
 	function handle_scripts() {
 		$raw_options = wpsf_get_setting_bibleup( 'bibleup', 'tab_2_paste_config', 'raw_options' );
-		wp_enqueue_script( 'bibleup', $this->script, null, null, true );
+		$custom_css = wpsf_get_setting_bibleup( 'bibleup', 'tab_2_custom_css', 'custom_css' );
+		wp_enqueue_script('bibleup-core', $this->script, null, 'beta', true );
+		wp_enqueue_style('bibleup-style', $this->style, null, 'beta');
 
 		if (empty($raw_options)) {
 			$data = $this->get_select_options();
-			wp_add_inline_script('bibleup', $data, 'after');
+			wp_add_inline_script('bibleup-core', $data, 'after');
 		} else {
 			$data_r = $this->get_raw_options();
-			wp_add_inline_script('bibleup', $data_r, 'after');
+			wp_add_inline_script('bibleup-core', $data_r, 'after');
 		}
+
+		// Add custom CSS
+		if (!empty($custom_css)) {
+			wp_add_inline_style('bibleup-style', $custom_css);
+		}
+	}
+
+	function get_custom_css() {
+		$custom_css = wpsf_get_setting_bibleup( 'bibleup', 'tab_2_paste_config', 'custom_css' );
+		return $custom_css;
 	}
 
 	function get_select_options() {

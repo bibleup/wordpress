@@ -665,9 +665,3 @@ ul.wpsf-visual-field--image-radio img {
 .wpsf-visual-field__item-footer {
     padding: 12px 19px;
 }
-
-.codeMirror {
-	margin: 10px;
-	border: 2px solid #ccc;
-	border-radius: 5px;
-}

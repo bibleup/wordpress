@@ -183,7 +183,7 @@ if ( ! class_exists( 'Bibleup_WordPressSettingsFramework' ) ) {
 
 			$this->settings_page['title']      = $args['page_title'];
 			$this->settings_page['capability'] = $args['capability'];
-			
+
 			if ( $args['parent_slug'] ) {
 				add_submenu_page(
 					$args['parent_slug'],
@@ -342,7 +342,7 @@ if ( ! class_exists( 'Bibleup_WordPressSettingsFramework' ) ) {
 										}
 
 										$link = ( $link_url ) ? sprintf( '<a class="wpsf-link" href="%s"%s>%s</a>', $link_url, $link_target, $link_text ) : '';
-										
+
 										if ( $link && 'tooltip' === $link_type ) {
 											$tooltip = $link;
 										} elseif ( $link ) {
@@ -618,7 +618,7 @@ if ( ! class_exists( 'Bibleup_WordPressSettingsFramework' ) ) {
 				$checked  = $value == $args['value'] ? 'checked="checked"' : '';
 
 				echo sprintf(
-					'<li class="wpsf-visual-field__item %s">				
+					'<li class="wpsf-visual-field__item %s">
 						<label>
 							<div class="wpsf-visual-field-image-radio__img_wrap">
 								<img src="%s">
@@ -952,7 +952,7 @@ if ( ! class_exists( 'Bibleup_WordPressSettingsFramework' ) ) {
 		 * @param array $args
 		 */
 		public function generate_code_editor_field( $args ) {
-			
+
 			$this->generate_description( $args['desc'] );
 			printf(
 				'<textarea
@@ -962,15 +962,20 @@ if ( ! class_exists( 'Bibleup_WordPressSettingsFramework' ) ) {
 					rows="5"
 					cols="60"
 					class="%s"
-				>%s</textarea>', 
+				>%s</textarea>',
 				esc_attr( $args['name'] ),
 				esc_attr( $args['id'] ),
 				esc_attr( $args['placeholder'] ),
 				esc_attr( $args['class'] ),
-				esc_html( $args['value'] ) 
+				esc_html( $args['value'] )
 			);
 
     		$settings = wp_enqueue_code_editor( array( 'type' => esc_attr( $args['mimetype'] ) ) );
+			$css = ".CodeMirror {
+				margin: 10px;
+				border: 2px solid #ccc;
+				border-radius: 5px;
+			}";
 
 			wp_add_inline_script(
 				'code-editor',
@@ -981,6 +986,7 @@ if ( ! class_exists( 'Bibleup_WordPressSettingsFramework' ) ) {
 				)
 			);
 
+			wp_add_inline_style('code-editor', $css);
 		}
 
 		/**
