@@ -197,6 +197,17 @@ function wpsf_tabbed_settings( $wpsf_settings ) {
 			'section_order' => 10,
 			'fields'        => array(
 				array(
+					'id'      => 'ignoreCase',
+					'title'   => 'Ignore letter case when tagging references',
+					'desc'    => "Allow BibleUp match references in any letter case.",
+					'type'    => 'radio',
+					'default' => 'false',
+					'choices' => array(
+						'true'   => 'True',
+						'false' => 'False',
+					),
+				),
+				array(
 					'id'      => 'bu_ignore',
 					'title'   => 'Ignore Specific HTML Elements',
 					'desc'    => "BibleUp won't tag element listed here.<br>

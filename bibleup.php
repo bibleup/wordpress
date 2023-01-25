@@ -104,6 +104,7 @@ class BibleUp {
 		$box_shadow = wpsf_get_setting_bibleup( 'bibleup', 'tab_1_popup_style', 'box_shadow' );
 		$font_size = wpsf_get_setting_bibleup( 'bibleup', 'tab_1_popup_style', 'font_size' );
 		// tab_1 section ID - additional
+		$ignoreCase = wpsf_get_setting_bibleup( 'bibleup', 'tab_1_additional', 'ignoreCase' );
 		$bu_allow = wpsf_get_setting_bibleup( 'bibleup', 'tab_1_additional', 'bu_allow' );
 		$bu_ignore = wpsf_get_setting_bibleup( 'bibleup', 'tab_1_additional', 'bu_ignore' );
 		$buid = wpsf_get_setting_bibleup( 'bibleup', 'tab_1_additional', 'buid' );
@@ -124,6 +125,7 @@ class BibleUp {
   				popup: ". $call($popup, 'classic') .",
 				version: ". $call($version, 'KJV') .",
 				darkTheme: ". $call($dark_theme, 'false') .",
+				ignoreCase: ". $call($ignoreCase, 'false') .",
 				bu_ignore: ". $call($bu_ignore, '["H1", "H2", "H3", "H4", "H5", "H6", "A"]', true) .",
 				bu_allow: ". $call($bu_allow, '[]', true) .",
 				styles: {
