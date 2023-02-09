@@ -1,7 +1,7 @@
 # BibleUp WordPress Plugin
 
 <div align="center">
-<b>We are now live on the WordPress Plugin Directory ➡ </b>[visit page](https://wordpress.org/plugins/bibleup/)<br>
+<b>We are now live on the WordPress Plugin Directory ➡ <a href='https://wordpress.org/plugins/bibleup/'>visit page</a></b><br>
 The official WordPress plugin for BibleUp.<br>
 Set up BibleUp on your WordPress site easily by using the plugin.
 </div>
