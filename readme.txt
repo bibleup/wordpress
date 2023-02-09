@@ -8,7 +8,7 @@ Stable tag: 1.0.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-BibleUp transforms Bible references on a webpage into links and the makes the corresponding text accessible via a flexible and highly-customizable popover.
+BibleUp transforms Bible references on a webpage into links and the makes the text accessible via a flexible and highly-customizable popover.
 
 == Description ==
 [**BibleUp**](https://bibleup.netlify.app/) is a configurable web tool that makes the text of Bible references on a webpage easily accessible when hovered or clicked.<br>
@@ -33,7 +33,7 @@ With **BibleUp**, Bible references can be looked up easily without having to swi
 ## Demo 🛸
 
  - See how BibleUp works on our [demo page](https://bibleup.netlify.app/demo).
- - Check out [the editor](https://bibleup.netlify.app/demo/#editor) to play with customization and styling.
+ - Check out [the editor](https://bibleup.netlify.app/demo/editor) to play with customization and styling.
  - For developers: Configure BibleUp options live using the [code playground](https://stackblitz.com/edit/bibleup).
 
 == Frequently Asked Questions ==
@@ -45,18 +45,18 @@ We try respond to all feedbacks across our supported platforms.
 In order of their quick response time:
 
  1. [Github](https://github.com/bibleup/wordpress/issues) (all issues, requests and contributions)
- 2. Support forum (for WordPress)
- 3. [Website form](https://bibleup.netlify.app/#contact) (general happy feedbacks)
+ 2. [General support Page](https://bibleup.canny.io)
+ 3. WordPress Support forum (for WordPress)
 
 = How is the development going =
 BibleUp recently lauched v1.0.0 and there is so much more to come!<br>
-We plan to roll out more Bible versions, allow for compare features and lots more before the next major release.<br><br>
+We plan to roll out more Bible versions, change version on popovers and lots more before the next major release.<br><br>
 The best way to take part in development is by following us on [Github](https://github.com/bibleup), making contributions and giving us a star.
 
 = How can I help support =
 We currently do not accept financial support, but there are **many other ways** you can contribute to this project.
 We have a short guide on how to support as a blogger, developer, an organisation and even as a reviewer.<br><br>
-Please rate us and drop a review. You can also share this tool to as many as would find it helpful. 
+Please rate us and drop a review. You can also share this tool to as many as would find it helpful.
 Thank you for every contribution you make!
 
 == Screenshots ==

@@ -15,13 +15,14 @@ class BibleUp {
 	private $plugin_path; // @var string
 	private $wpsf; // @var Bibleup_WordPressSettingsFramework
 	private $script; // CDN delivered and source-controlled
+	private $style;
 
 	// BibleUp constructor.
 	function __construct() {
 		$this->plugin_path = plugin_dir_path( __FILE__ );
-		//this service is documented and delivery is pegged to major version
-		$this->script = 'https://cdn.jsdelivr.net/npm/@bibleup/bibleup@beta/dist/umd/bibleup-core.min.js';
-		$this->style = 'https://cdn.jsdelivr.net/npm/@bibleup/bibleup@beta/dist/css/bibleup.css';
+		//this service is documented and delivery is pegged to major version @1
+		$this->script = 'https://cdn.jsdelivr.net/npm/@bibleup/bibleup@1/dist/umd/bibleup-core.min.js';
+		$this->style = 'https://cdn.jsdelivr.net/npm/@bibleup/bibleup@1/dist/css/bibleup.css';
 
 		// Include and create a new Bibleup_WordPressSettingsFramework
 		require_once( $this->plugin_path . 'wp-settings-framework/wp-settings-framework.php' );
@@ -65,15 +66,15 @@ class BibleUp {
 	function handle_scripts() {
 		$raw_options = wpsf_get_setting_bibleup( 'bibleup', 'tab_2_paste_config', 'raw_options' );
 		$custom_css = wpsf_get_setting_bibleup( 'bibleup', 'tab_2_custom_css', 'custom_css' );
-		wp_enqueue_script('bibleup-core', $this->script, null, 'beta', true );
-		wp_enqueue_style('bibleup-style', $this->style, null, 'beta');
+		wp_enqueue_script('bibleup-core', $this->script, null, 'v1', true );
+		wp_enqueue_style('bibleup-style', $this->style, null, 'v1');
 
 		if (empty($raw_options)) {
 			$data = $this->get_select_options();
 			wp_add_inline_script('bibleup-core', $data, 'after');
 		} else {
-			$data_r = $this->get_raw_options();
-			wp_add_inline_script('bibleup-core', $data_r, 'after');
+			$data_raw = $this->get_raw_options();
+			wp_add_inline_script('bibleup-core', $data_raw, 'after');
 		}
 
 		// Add custom CSS
@@ -128,6 +129,7 @@ class BibleUp {
 				ignoreCase: ". $call($ignoreCase, 'false') .",
 				bu_ignore: ". $call($bu_ignore, '["H1", "H2", "H3", "H4", "H5", "H6", "A"]', true) .",
 				bu_allow: ". $call($bu_allow, '[]', true) .",
+				buid: ". $call($buid, 'false') .",
 				styles: {
 					primary: ". $call($primary, 'false') .",
 					secondary: ". $call($secondary, 'false') .",
@@ -136,7 +138,6 @@ class BibleUp {
 					fontColor: ". $call($font_color, 'false') .",
 					versionColor: ". $call($version_color, 'false') .",
 					closeColor: ". $call($close_color, 'false') .",
-					buid: ". $call($buid, 'false') .",
 					borderRadius: ". $call($border_radius, 'false') .",
 					boxShadow: ". $call($box_shadow, 'false') .",
 					fontSize: ". $call($font_size, 'false') .",

@@ -258,7 +258,7 @@ function wpsf_tabbed_settings( $wpsf_settings ) {
 			'tab_id'        => 'tab_2',
 			'section_id'    => 'paste_config',
 			'section_title' => 'Paste Config',
-			'section_description' => 'Use the instant <a target="_blank" href="https://bibleup.netlify.app/demo#editor">editor</a> to style popup in real-time, then copy and paste the generated config options.<br>
+			'section_description' => 'Use the instant <a target="_blank" href="https://bibleup.netlify.app/demo/editor">editor</a> to style popup in real-time, then copy and paste the generated config options.<br>
 			This section <b>overides every options</b> in the <b>Select Options</b> tab.<br><br>
 			Leave the editor blank if you want to manually seclect options instead.',
 			'section_order' => 10,

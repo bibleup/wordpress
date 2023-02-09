@@ -34,7 +34,7 @@ You can find the settings page at **settings >> BibleUp** after activating the p
 ## Demo 🛸
 
  - See how BibleUp works on our [demo page](https://bibleup.netlify.app/demo).
- - Check out [the editor](https://bibleup.netlify.app/demo/#editor) to play with customization and styling.
+ - Check out [the editor](https://bibleup.netlify.app/demo/editor) to play with customization and styling.
  - For developers: Configure BibleUp options live using the [code playground](https://stackblitz.com/edit/bibleup).
 
 ## Issues and Requests
@@ -44,6 +44,6 @@ In order of their quick response time:
  1. [Github](https://github.com/bibleup/wordpress/issues) (all issues, requests and contributions)
  2. Support forum (for WordPress)
  3. [Website form](https://bibleup.netlify.app/#contact) (general happy feedbacks)
- 
+
  ## Credits
  Iconicwp - Wordpress Settings Framework ([github repo](https://github.com/iconicwp/WordPress-Settings-Framework))
