@@ -8,7 +8,7 @@ Stable tag: 1.0.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-BibleUp transforms Bible references on a webpage into links and the makes the text accessible via a flexible and highly-customizable popover.
+BibleUp transforms Bible references on a webpage into links and makes the text accessible via a flexible and highly-customizable popover.
 
 == Description ==
 [**BibleUp**](https://bibleup.netlify.app/) is a configurable web tool that makes the text of Bible references on a webpage easily accessible when hovered or clicked.<br>
@@ -41,7 +41,7 @@ With **BibleUp**, Bible references can be looked up easily without having to swi
 BibleUp currently supports 4 Bible versions with much more to come. These versions are the Authorized King James Version (KJV), Authorized Standard Version (ASV), Literal Standard Version (LSV) and the World English Bible (WEB).
 
 = How to report an issue or submit feature requests =
-We try respond to all feedbacks across our supported platforms.
+We try to respond to all feedback across our supported platforms.
 In order of their quick response time:
 
  1. [Github](https://github.com/bibleup/wordpress/issues) (all issues, requests and contributions)
@@ -49,27 +49,28 @@ In order of their quick response time:
  3. WordPress Support forum (for WordPress)
 
 = How is the development going =
-BibleUp recently lauched v1.0.0 and there is so much more to come!<br>
-We plan to roll out more Bible versions, change version on popovers and lots more before the next major release.<br><br>
-The best way to take part in development is by following us on [Github](https://github.com/bibleup), making contributions and giving us a star.
+BibleUp recently launched v1.0.0 and there is so much more to come!<br>
+We plan to roll out more Bible versions, change versions on popovers and lots more before the next major release.<br><br>
+The best way to participate in development is by following us on [Github](https://github.com/bibleup), making contributions and giving us a star.
 
 = How can I help support =
 We currently do not accept financial support, but there are **many other ways** you can contribute to this project.
-We have a short guide on how to support as a blogger, developer, an organisation and even as a reviewer.<br><br>
-Please rate us and drop a review. You can also share this tool to as many as would find it helpful.
+We have a short guide on how to support as a blogger, developer, organisation and even as a reviewer.<br><br>
+Please rate us and drop a review. You can also share this tool with as many as would find it helpful.
 Thank you for every contribution you make!
 
 == Screenshots ==
-1. Settings page(1)
-2. Settings page(2)
-3. BibleUp popover on a reference
-4. The editor
+1. Settings page (1)
+2. Settings page (2)
+3. Settings page (3)
+3. BibleUp popover (dark theme)
+4. The BibleUp Editor
 
 == Installation ==
 = Install BibleUp within WordPress =
 
 1) From your site dashboard, go to **Plugins >> Add New**
-2) Search for 'BibleUp' in the search box provided on screen.
+2) Search for 'BibleUp' in the search box provided on the screen.
 3) Click the 'Install Now' button
 4) Activate the plugin and configure the options as you want!
 
