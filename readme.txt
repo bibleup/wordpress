@@ -4,7 +4,7 @@ Tags: bible, references, reftagging, christian, scripture, popup
 Requires at least: 5.6
 Tested up to: 6.3
 Requires PHP: 7.0
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -45,7 +45,7 @@ We try to respond to all feedback across our supported platforms.
 In order of their quick response time:
 
  1. [Github](https://github.com/bibleup/wordpress/issues) (all issues, requests and contributions)
- 2. [General support Page](https://bibleup.canny.io)
+ 2. [General support Forum](https://groups.google.com/g/bibleup)
  3. WordPress Support forum (for WordPress)
 
 = How is the development going =
@@ -87,3 +87,6 @@ You can find the settings page at **settings >> BibleUp** after activating the p
 == Changelog ==
 = 1.0.0 =
 * Initial Release
+
+= 1.0.1 =
+* Update compatibility with WordPress 6.3
