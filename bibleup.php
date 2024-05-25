@@ -1,11 +1,11 @@
 <?php
 /*
    Plugin Name: BibleUp
-   Plugin URI: https://bibleup.netlify.com
+   Plugin URI: https://bibleup.netlify.app
    description: BibleUp transforms Bible References on a webpage into flexible, and highly customisable popovers.
    Version: 1.0.1
    Author: BibleUp
-   Author URI: https://bibleup.netlify.com
+   Author URI: https://bibleup.netlify.app
    License: GPLv3
    License URI: https://www.gnu.org/licenses/gpl-3.0.html
    */
@@ -158,7 +158,7 @@ class BibleUp {
 		return $r;
 	}
 
-	function bibleup_deactivate() {
+	public static function bibleup_deactivate() {
 		// Delete all saved settings from option group - bibleup
 		wpsf_delete_settings_bibleup( 'bibleup' );
 	}
