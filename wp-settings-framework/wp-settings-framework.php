@@ -346,7 +346,11 @@ if ( ! class_exists( 'Bibleup_WordPressSettingsFramework' ) ) {
 										if ( $link && 'tooltip' === $link_type ) {
 											$tooltip = $link;
 										} elseif ( $link ) {
-											$field['subtitle'] .= ( empty( $field['subtitle'] ) ) ? $link : sprintf( '<br/><br/>%s', $link );
+											if ( isset( $field['subtitle'] ) ) {
+												$field['subtitle'] .= ( empty( $field['subtitle'] ) ) ? $link : sprintf( '<br/><br/>%s', $link );
+											} else {
+												$field['subtitle'] = $link;
+											}
 										}
 									}
 
