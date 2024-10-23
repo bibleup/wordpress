@@ -87,6 +87,12 @@ function wpsf_tabbed_settings($wpsf_settings)
 						'ASV' => 'American Standard Version (ASV)',
 						'LSV' => 'Literal Standard Version (LSV)',
 						'WEB' => 'World English Bible (WEB)',
+						'ESV' => 'English Standard Version (ESV)',
+						'NIV' => 'New International Version (NIV)',
+						'MSG' => 'The Message Translation (MSG)',
+						'AMP' => 'The Amplified Bible (AMP)',
+						'NLT' => 'New Living Translation (NLT)',
+						'NASB' => 'New American Standard Bible (NASB)'
 					),
 				),
 				array(
