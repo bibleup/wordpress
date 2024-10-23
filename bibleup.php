@@ -117,7 +117,7 @@ class BibleUp {
 				return 'true';
 			} else {
 				$prop = esc_js($prop);
-				return "'${prop}'";
+				return "'{$prop}'";
 			}
 		};
 
