@@ -2,9 +2,9 @@
 Contributors: bibleup, bukunmikuti
 Tags: bible, references, reftagging, christian, scripture, popup
 Requires at least: 5.6
-Tested up to: 6.3
+Tested up to: 6.6
 Requires PHP: 7.0
-Stable tag: 1.0.1
+Stable tag: 1.1.0
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -22,13 +22,13 @@ With **BibleUp**, Bible references can be looked up easily without having to swi
 
 ## Features 💡
 
-- **Smart tagging:** BibleUp can safely recognize and tag references in multiple, different ways. Abbreviated and standard names will be tagged correctly as well as multiple verse range. BibleUp also supports version tagging.
+- **Smart tagging:** BibleUp can recognize and tag references in multiple, different ways. Abbreviated or standard names, as well as multiple verse ranges, will be tagged correctly. BibleUp also supports version tagging.
 
-- **Flexible and highly customizable:** BibleUp comes with different popover types and can be thoroughly customized to fit your site\'s theme. Customization can be done through the provided options.
+- **Flexible and highly customizable:** BibleUp comes with different popover types and can be thoroughly customized to fit your site\'s theme.
 
 - **Performant:** Make your readers enjoy fast Bible references look-up without bloating your site. BibleUp also follows the WAI-ARAI accessibility guidelines for screen readers and keyboard navigation.
 
-- **Agile development and contributions:** BibleUp is free and open-sourced, contributions can be made by anyone. Issues and requests will also be attended to faster.
+- **Agile development and contributions:** BibleUp is free and open-sourced, contributions can be made by anyone. Issues and requests will be attended to faster.
 
 ## Demo 🛸
 
@@ -37,21 +37,21 @@ With **BibleUp**, Bible references can be looked up easily without having to swi
  - For developers: Configure BibleUp options live using the [code playground](https://stackblitz.com/edit/bibleup).
 
 == Frequently Asked Questions ==
-= How many versions does BibleUp supports =
-BibleUp currently supports 4 Bible versions with much more to come. These versions are the Authorized King James Version (KJV), Authorized Standard Version (ASV), Literal Standard Version (LSV) and the World English Bible (WEB).
+= How many versions does BibleUp support =
+BibleUp currently supports 10 Bible versions, including modern versions you can use. See [all versions](https://bibleup.netlify.app/docs/guide/options.html#version)
+
+
+= Will BibleUp support other languages =
+We are currently working to include other translations apart from English. If there is any language/translation you would like to use or help with, send us a message and let us know.
 
 = How to report an issue or submit feature requests =
 We try to respond to all feedback across our supported platforms.
 In order of their quick response time:
 
  1. [Github](https://github.com/bibleup/wordpress/issues) (all issues, requests and contributions)
- 2. [General support Forum](https://groups.google.com/g/bibleup)
- 3. WordPress Support forum (for WordPress)
-
-= How is the development going =
-BibleUp recently launched v1.0.0 and there is so much more to come!<br>
-We plan to roll out more Bible versions, change versions on popovers and lots more before the next major release.<br><br>
-The best way to participate in development is by following us on [Github](https://github.com/bibleup), making contributions and giving us a star.
+ 2. [General support Forum](https://groups.google.com/g/bibleup) or 
+ 3. [Website contact form](https://bibleup.netlify.app)
+ 4. WordPress Support forum (for WordPress issues)
 
 = How can I help support =
 We currently do not accept financial support, but there are **many other ways** you can contribute to this project.
@@ -80,11 +80,15 @@ Thank you for every contribution you make!
 2) From your site dashboard, go to **Plugins >> Add New**
 3) Click on the 'Upload Plugin' button at the top left corner to reveal the file picker.
 4) Select and upload the downloaded zip file.
-5) Install the Plugin and activate once done. Configure the options as you want!
+5) Install the Plugin and activate it once done. Configure the options as you want!
 
-You can find the settings page at **settings >> BibleUp** after activating the plugin.
+After activating the plugin, you can find the settings page at **settings > BibleUp**
 
 == Changelog ==
+= 1.1.0 =
+* Added support for five more versions*
+* Performance and bug fixes *
+
 = 1.0.0 =
 * Initial Release
 
