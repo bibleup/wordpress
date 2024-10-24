@@ -91,12 +91,6 @@ class BibleUp
 		}
 	}
 
-	function get_custom_css()
-	{
-		$custom_css = wpsf_get_setting_bibleup('bibleup', 'tab_2_paste_config', 'custom_css');
-		return $custom_css;
-	}
-
 	function get_select_options()
 	{
 		// tab_1 section ID - select_options
